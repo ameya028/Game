@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ameya's Gaming Zone</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #050505;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            background: rgba(5, 5, 5, 0.96);
+            border-bottom: 1px solid #3a2c0b;
+        }
+
+        .navbar-brand {
+            font-size: 22px;
+            font-weight: 700;
+            color: #ffffff !important;
+        }
+
+        .navbar-brand span {
+            color: #d4af37;
+        }
+
+        .navbar-brand i {
+            color: #d4af37;
+            margin-right: 8px;
+        }
+
+        .nav-link {
+            color: #d0d0d0 !important;
+            margin: 0 10px;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #d4af37 !important;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+
+            min-height: 550px;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(5,5,5,1) 0%,
+                    rgba(5,5,5,0.90) 35%,
+                    rgba(5,5,5,0.35) 100%
+                ),
+                url("https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=2000&q=80");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: 62px;
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            color: #d4af37;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #bdbdbd;
+        }
+
+        .hero-btn {
+
+            border: 1px solid #d4af37;
+            color: #ffffff;
+
+            padding: 12px 26px;
+
+            border-radius: 30px;
+
+            transition: 0.3s;
+        }
+
+        .hero-btn:hover {
+            background: #d4af37;
+            color: #000;
+            box-shadow: 0 0 25px rgba(212,175,55,0.35);
+        }
+
+        /* ================= SECTION ================= */
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+        }
+
+        .section-title span {
+            color: #d4af37;
+        }
+
+        .section-subtitle {
+            color: #888;
+        }
+
+        /* ================= GAME CARDS ================= */
+
+        .game-card {
+
+            background: #101010;
+
+            border: 1px solid #292929;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            height: 100%;
+
+            transition:
+                background 0.5s ease,
+                border-color 0.5s ease,
+                transform 0.5s ease,
+                box-shadow 0.5s ease;
+        }
+
+        /* CLASH HOVER */
+
+        .clash-card:hover {
+
+            background: linear-gradient(
+                145deg,
+                #3b2705,
+                #171006
+            );
+
+            border-color: #d4af37;
+
+            transform: translateY(-12px);
+
+            box-shadow:
+                0 15px 45px rgba(212,175,55,0.25);
+        }
+
+        /* CHESS HOVER */
+
+        .chess-card:hover {
+
+            background: linear-gradient(
+                145deg,
+                #062c27,
+                #071614
+            );
+
+            border-color: #35c9a5;
+
+            transform: translateY(-12px);
+
+            box-shadow:
+                0 15px 45px rgba(53,201,165,0.20);
+        }
+
+        /* PUBG HOVER */
+
+        .pubg-card:hover {
+
+            background: linear-gradient(
+                145deg,
+                #35100d,
+                #160807
+            );
+
+            border-color: #ff4b3e;
+
+            transform: translateY(-12px);
+
+            box-shadow:
+                0 15px 45px rgba(255,75,62,0.22);
+        }
+
+        .game-img {
+
+            height: 230px;
+
+            width: 100%;
+
+            object-fit: cover;
+
+            transition: 0.5s;
+        }
+
+        .game-card:hover .game-img {
+            transform: scale(1.05);
+        }
+
+        .game-body {
+            padding: 25px;
+        }
+
+        .game-title {
+
+            font-size: 23px;
+
+            font-weight: 700;
+
+            margin-bottom: 12px;
+
+            color: #ffffff;
+        }
+
+        /* GOLD ICONS */
+
+        .game-title i {
+            color: #d4af37;
+        }
+
+        .game-description {
+
+            color: #a5a5a5;
+
+            min-height: 70px;
+        }
+
+        .tag {
+
+            display: inline-block;
+
+            background: rgba(212,175,55,0.08);
+
+            color: #d4af37;
+
+            border: 1px solid rgba(212,175,55,0.25);
+
+            padding: 5px 12px;
+
+            border-radius: 20px;
+
+            font-size: 12px;
+
+            margin-right: 5px;
+        }
+
+        /* ================= EXPLORE BUTTON ================= */
+
+        .explore-btn {
+
+            border: 1px solid #d4af37;
+
+            color: #d4af37;
+
+            background: transparent;
+
+            border-radius: 25px;
+
+            padding: 8px 18px;
+
+            transition: 0.3s;
+        }
+
+        .explore-btn:hover {
+
+            background: #d4af37;
+
+            color: #000;
+
+            box-shadow:
+                0 0 20px rgba(212,175,55,0.30);
+        }
+
+        /* ================= GAMING STYLE ================= */
+
+        .style-box {
+
+            background: #101010;
+
+            border: 1px solid #292929;
+
+            padding: 30px;
+
+            border-radius: 15px;
+
+            text-align: center;
+
+            transition: 0.4s;
+        }
+
+        .style-box:hover {
+
+            border-color: #d4af37;
+
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 10px 30px rgba(212,175,55,0.15);
+        }
+
+        .style-box i {
+
+            font-size: 35px;
+
+            color: #d4af37;
+        }
+
+        .style-box h5 {
+            margin-top: 15px;
+        }
+
+        .style-box p {
+            color: #888;
+        }
+
+        /* ================= MODAL ================= */
+
+        .modal-content {
+
+            background: #0b0b0b;
+
+            color: white;
+
+            border: 1px solid #d4af37;
+
+            border-radius: 15px;
+        }
+
+        .modal-header {
+
+            border-bottom: 1px solid #30270f;
+        }
+
+        .modal-title {
+
+            color: #d4af37;
+
+            font-weight: 700;
+        }
+
+        .modal-footer {
+
+            border-top: 1px solid #30270f;
+        }
+
+        /* ================= GAME INFO ================= */
+
+        .info-box {
+
+            background: #151515;
+
+            border: 1px solid #292929;
+
+            padding: 16px;
+
+            border-radius: 10px;
+
+            margin-bottom: 15px;
+
+            transition: 0.3s;
+        }
+
+        .info-box:hover {
+
+            border-color: #d4af37;
+
+            transform: translateY(-3px);
+        }
+
+        .info-box small {
+
+            color: #777;
+        }
+
+        .info-box h6 {
+
+            margin-top: 6px;
+
+            color: #d4af37;
+
+            font-weight: 600;
+        }
+
+        .modal-list li {
+
+            margin-bottom: 10px;
+
+            color: #bcbcbc;
+        }
+
+        .modal-list i {
+
+            color: #d4af37;
+
+            margin-right: 8px;
+        }
+
+        /* GAME ID */
+
+        .game-id {
+
+            background: rgba(212,175,55,0.08);
+
+            border: 1px dashed #d4af37;
+
+            padding: 10px 15px;
+
+            border-radius: 8px;
+
+            margin-bottom: 20px;
+
+            color: #d4af37;
+
+            font-size: 14px;
+        }
+
+        .game-id span {
+
+            color: #888;
+
+            margin-right: 8px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+
+            border-top: 1px solid #292929;
+
+            color: #666;
+        }
+
+        footer span {
+            color: #d4af37;
+        }
+
+        @media(max-width: 768px) {
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero {
+                min-height: 500px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="#">
+
+            <i class="bi bi-controller"></i>
+
+            AMEYA'S <span>GAMING ZONE</span>
+
+        </a>
+
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarMenu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#games">Games</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#style">My Style</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About Me</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <h1>
+                My <span>Gaming</span> World
+            </h1>
+
+            <p class="mt-3">
+
+                The games I love.
+                The battles I remember.
+                The moments I enjoy.
+
+            </p>
+
+
+            <div class="mt-4">
+
+                <a href="#games" class="btn hero-btn">
+
+                    <i class="bi bi-controller"></i>
+
+                    Explore My Games
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GAMES ================= -->
+
+<section class="py-5" id="games">
+
+    <div class="container">
+
+        <div class="mb-5">
+
+            <h2 class="section-title">
+
+                My <span>Favorite Games</span>
+
+            </h2>
+
+            <p class="section-subtitle">
+
+                Three games. Endless hours of fun.
+
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <!-- ================= CLASH ================= -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="game-card clash-card">
+
+                    <img
+                        src="C:\Users\AMEYA\Desktop\New folder\COC.jpg"
+                        class="game-img"
+                        alt="Clash of Clans">
+
+
+                    <div class="game-body">
+
+                        <h3 class="game-title">
+
+                            <i class="bi bi-shield-fill"></i>
+
+                            Clash of Clans
+
+                        </h3>
+
+
+                        <div class="mb-3">
+
+                            <span class="tag">
+                                Strategy
+                            </span>
+
+                            <span class="tag">
+                                Base Building
+                            </span>
+
+                        </div>
+
+
+                        <p class="game-description">
+
+                            Build your village, train your troops,
+                            attack enemy bases and grow your clan.
+
+                        </p>
+
+
+                        <div class="text-end">
+
+                            <button
+                                class="explore-btn"
+                                data-bs-toggle="modal"
+                                data-bs-target="#clashModal">
+
+                                Explore Game
+
+                                <i class="bi bi-arrow-right"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= CHESS ================= -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="game-card chess-card">
+
+                    <img
+                        src="C:\Users\AMEYA\Desktop\New folder\CHESS.png"
+                        class="game-img"
+                        alt="Chess">
+
+
+                    <div class="game-body">
+
+                        <h3 class="game-title">
+
+                            <i class="bi bi-grid-3x3-gap"></i>
+
+                            Chess
+
+                        </h3>
+
+
+                        <div class="mb-3">
+
+                            <span class="tag">
+                                Strategy
+                            </span>
+
+                            <span class="tag">
+                                Mind Game
+                            </span>
+
+                        </div>
+
+
+                        <p class="game-description">
+
+                            Think ahead, plan your moves and
+                            try to outsmart your opponent.
+
+                        </p>
+
+
+                        <div class="text-end">
+
+                            <button
+                                class="explore-btn"
+                                data-bs-toggle="modal"
+                                data-bs-target="#chessModal">
+
+                                Explore Game
+
+                                <i class="bi bi-arrow-right"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= PUBG ================= -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="game-card pubg-card">
+
+                    <img
+                        src="C:\Users\AMEYA\Desktop\New folder\PUBG.jpg"
+                        class="game-img"
+                        alt="PUBG">
+
+
+                    <div class="game-body">
+
+                        <h3 class="game-title">
+
+                            <i class="bi bi-crosshair"></i>
+
+                            PUBG / BGMI
+
+                        </h3>
+
+
+                        <div class="mb-3">
+
+                            <span class="tag">
+                                Battle Royale
+                            </span>
+
+                            <span class="tag">
+                                Multiplayer
+                            </span>
+
+                        </div>
+
+
+                        <p class="game-description">
+
+                            Drop in, gear up, survive and try
+                            to be the last player standing.
+
+                        </p>
+
+
+                        <div class="text-end">
+
+                            <button
+                                class="explore-btn"
+                                data-bs-toggle="modal"
+                                data-bs-target="#pubgModal">
+
+                                Explore Game
+
+                                <i class="bi bi-arrow-right"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GAMING STYLE ================= -->
+
+<section class="py-5" id="style">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="section-title">
+
+                My <span>Gaming Style</span>
+
+            </h2>
+
+            <p class="section-subtitle">
+
+                Different games, different ways to play.
+
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <div class="col-md-4">
+
+                <div class="style-box">
+
+                    <i class="bi bi-bullseye"></i>
+
+                    <h5>Strategy</h5>
+
+                    <p>
+                        Plan my moves before making them.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="style-box">
+
+                    <i class="bi bi-trophy"></i>
+
+                    <h5>Competition</h5>
+
+                    <p>
+                        Challenge myself and keep improving.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="style-box">
+
+                    <i class="bi bi-controller"></i>
+
+                    <h5>Fun</h5>
+
+                    <p>
+                        Enjoy every match and every moment.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="py-5" id="about">
+
+    <div class="container text-center">
+
+        <h2 class="section-title">
+
+            About <span>My Gaming</span>
+
+        </h2>
+
+        <p class="section-subtitle mx-auto mt-3"
+            style="max-width:700px;">
+
+            Gaming is more than just entertainment for me.
+            I enjoy strategy, competition, learning from every
+            match and having fun along the way.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- CLASH MODAL -->
+<!-- ================================================= -->
+
+<div class="modal fade" id="clashModal" tabindex="-1">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+
+                    <i class="bi bi-shield-fill"></i>
+
+                    My Clash of Clans
+
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close btn-close-white"
+                    data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+
+                <!-- GAME ID -->
+
+                <div class="game-id">
+
+                    <span>Game ID:</span>
+
+                    #9UPP00GR8
+
+                </div>
+
+
+                <div class="row g-3">
+
+
+                    <div class="col-md-4">
+
+                        <div class="info-box">
+
+                            <small>
+                                Started Playing
+                            </small>
+
+                            <h6>
+                                2016
+                            </h6>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-4">
+
+                        <div class="info-box">
+
+                            <small>
+                                Town Hall
+                            </small>
+
+                            <h6>
+                                TH14
+                            </h6>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-4">
+
+                        <div class="info-box">
+
+                            <small>
+                                Play Style
+                            </small>
+
+                            <h6>
+                                Strategic
+                            </h6>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <h5 class="mt-4">
+                    What I Like About It
+                </h5>
+
+
+                <ul class="modal-list list-unstyled mt-3">
+
+                    <li>
+                        <i class="bi bi-check-circle-fill"></i>
+                        Building and upgrading my village
+                    </li>
+
+                    <li>
+                        <i class="bi bi-check-circle-fill"></i>
+                        Planning attacks
+                    </li>
+
+                    <li>
+                        <i class="bi bi-check-circle-fill"></i>
+                        Clan wars
+                    </li>
+
+                    <li>
+                        <i class="bi bi-check-circle-fill"></i>
+                        Unlocking and upgrading troops
+                    </li>
+
+                </ul>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- CHESS MODAL -->
+<!-- ================================================= -->
+
+<div class="modal fade" id="chessModal" tabindex="-1">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+
+                    <i class="bi bi-grid-3x3-gap"></i>
+
+                    My Chess
+
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close btn-close-white"
+                    data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+
+                <div class="game-id">
+
+                    <span>Username:</span>
+
+                    ameyalad 
+
+                </div>
+
+
+                <div class="row g-3">
+
+
+                    <div class="col-md-4">
+
+                        <div class="info-box">
+
+                            <small>
+                                Play Style
+                            </small>
+
+                            <h6>
+                                Strategic
+                            </h6>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-4">
+
+                        <div class="info-box">
+
+                            <small>
+                                Favorite Mode
+                            </small>
+
+                            <h6>
+                                Rapid
+                            </h6>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-4">
+
+                        <div class="info-box">
+
+                            <small>
+                                Favorite Piece
+                            </small>
+
+                            <h6>
+                                Knight
+                            </h6>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <h5 class="mt-4">
+                    What I Like About It
+                </h5>
+
+
+                <ul class="modal-list list-unstyled mt-3">
+
+                    <li>
+                        <i class="bi bi-check-circle-fill"></i>
+                        Planning several moves ahead
+                    </li>
+
+                    <li>
+                        <i class="bi bi-check-circle-fill"></i>
+                        Tactical combinations
+                    </li>
+
+                    <li>
+                        <i class="bi bi-check-circle-fill"></i>
+                        Learning new openings
+                    </li>
+
+                    <li>
+                        <i class="bi bi-check-circle-fill"></i>
+                        Improving after every game
+                    </li>
+
+                </ul>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- PUBG MODAL -->
+<!-- ================================================= -->
+
+<div class="modal fade" id="pubgModal" tabindex="-1">
+
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+
+                    <i class="bi bi-crosshair"></i>
+
+                    My PUBG / BGMI
+
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close btn-close-white"
+                    data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+
+                <div class="game-id">
+
+                    <span>Game ID:</span>
+
+                    PUBG-003
+
+                </div>
+
+
+                <div class="row g-3">
+
+
+                    <div class="col-md-4">
+
+                        <div class="info-box">
+
+                            <small>
+                                Game Type
+                            </small>
+
+                            <h6>
+                                Battle Royale
+                            </h6>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-4">
+
+                        <div class="info-box">
+
+                            <small>
+                                Play Style
+                            </small>
+
+                            <h6>
+                                Competitive
+                            </h6>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-md-4">
+
+                        <div class="info-box">
+
+                            <small>
+                                Favorite Mode
+                            </small>
+
+                            <h6>
+                                Squad
+                            </h6>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <h5 class="mt-4">
+                    What I Like About It
+                </h5>
+
+
+                <ul class="modal-list list-unstyled mt-3">
+
+                    <li>
+                        <i class="bi bi-check-circle-fill"></i>
+                        Playing with friends
+                    </li>
+
+                    <li>
+                        <i class="bi bi-check-circle-fill"></i>
+                        Team coordination
+                    </li>
+
+                    <li>
+                        <i class="bi bi-check-circle-fill"></i>
+                        Different strategies every match
+                    </li>
+
+                    <li>
+                        <i class="bi bi-check-circle-fill"></i>
+                        Surviving until the end
+                    </li>
+
+                </ul>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="py-4">
+
+    <div class="container">
+
+        <div class="d-flex justify-content-between flex-wrap">
+
+            <div>
+                © 2026 Ameya's Gaming Zone
+            </div>
+
+            <div>
+                Made with ❤️ by
+                <span>Ameya</span> 🎮
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>
